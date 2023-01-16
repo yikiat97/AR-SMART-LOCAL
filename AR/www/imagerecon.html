@@ -1,0 +1,761 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Capture Photo</title>
+    <link rel="stylesheet" href="css/Content/jquery.mobile-1.4.5.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="lib/jquery-3.2.1.min.js"></script>
+    <script src="lib/jquery.mobile-1.4.5.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <style>
+        #fountainTextG {
+            width: 360px;
+            margin: auto;
+        }
+
+        .fountainTextG {
+            color: rgb(0,0,0);
+            font-family: Arial;
+            font-size: 30px;
+            text-decoration: none;
+            font-weight: normal;
+            font-style: normal;
+            float: left;
+            animation-name: bounce_fountainTextG;
+            -o-animation-name: bounce_fountainTextG;
+            -ms-animation-name: bounce_fountainTextG;
+            -webkit-animation-name: bounce_fountainTextG;
+            -moz-animation-name: bounce_fountainTextG;
+            animation-duration: 2.09s;
+            -o-animation-duration: 2.09s;
+            -ms-animation-duration: 2.09s;
+            -webkit-animation-duration: 2.09s;
+            -moz-animation-duration: 2.09s;
+            animation-iteration-count: infinite;
+            -o-animation-iteration-count: infinite;
+            -ms-animation-iteration-count: infinite;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            animation-direction: normal;
+            -o-animation-direction: normal;
+            -ms-animation-direction: normal;
+            -webkit-animation-direction: normal;
+            -moz-animation-direction: normal;
+            transform: scale(.5);
+            -o-transform: scale(.5);
+            -ms-transform: scale(.5);
+            -webkit-transform: scale(.5);
+            -moz-transform: scale(.5);
+        }
+
+        #fountainTextG_1 {
+            animation-delay: 0.75s;
+            -o-animation-delay: 0.75s;
+            -ms-animation-delay: 0.75s;
+            -webkit-animation-delay: 0.75s;
+            -moz-animation-delay: 0.75s;
+        }
+
+        #fountainTextG_2 {
+            animation-delay: 0.9s;
+            -o-animation-delay: 0.9s;
+            -ms-animation-delay: 0.9s;
+            -webkit-animation-delay: 0.9s;
+            -moz-animation-delay: 0.9s;
+        }
+
+        #fountainTextG_3 {
+            animation-delay: 1.05s;
+            -o-animation-delay: 1.05s;
+            -ms-animation-delay: 1.05s;
+            -webkit-animation-delay: 1.05s;
+            -moz-animation-delay: 1.05s;
+        }
+
+        #fountainTextG_4 {
+            animation-delay: 1.2s;
+            -o-animation-delay: 1.2s;
+            -ms-animation-delay: 1.2s;
+            -webkit-animation-delay: 1.2s;
+            -moz-animation-delay: 1.2s;
+        }
+
+        #fountainTextG_5 {
+            animation-delay: 1.35s;
+            -o-animation-delay: 1.35s;
+            -ms-animation-delay: 1.35s;
+            -webkit-animation-delay: 1.35s;
+            -moz-animation-delay: 1.35s;
+        }
+
+        #fountainTextG_6 {
+            animation-delay: 1.5s;
+            -o-animation-delay: 1.5s;
+            -ms-animation-delay: 1.5s;
+            -webkit-animation-delay: 1.5s;
+            -moz-animation-delay: 1.5s;
+        }
+
+        #fountainTextG_7 {
+            animation-delay: 1.64s;
+            -o-animation-delay: 1.64s;
+            -ms-animation-delay: 1.64s;
+            -webkit-animation-delay: 1.64s;
+            -moz-animation-delay: 1.64s;
+        }
+
+        #fountainTextG_8 {
+            animation-delay: 1.79s;
+            -o-animation-delay: 1.79s;
+            -ms-animation-delay: 1.79s;
+            -webkit-animation-delay: 1.79s;
+            -moz-animation-delay: 1.79s;
+        }
+
+        #fountainTextG_9 {
+            animation-delay: 1.94s;
+            -o-animation-delay: 1.94s;
+            -ms-animation-delay: 1.94s;
+            -webkit-animation-delay: 1.94s;
+            -moz-animation-delay: 1.94s;
+        }
+
+        #fountainTextG_10 {
+            animation-delay: 2.09s;
+            -o-animation-delay: 2.09s;
+            -ms-animation-delay: 2.09s;
+            -webkit-animation-delay: 2.09s;
+            -moz-animation-delay: 2.09s;
+        }
+
+        #fountainTextG_11 {
+            animation-delay: 2.24s;
+            -o-animation-delay: 2.24s;
+            -ms-animation-delay: 2.24s;
+            -webkit-animation-delay: 2.24s;
+            -moz-animation-delay: 2.24s;
+        }
+
+        #fountainTextG_12 {
+            animation-delay: 2.39s;
+            -o-animation-delay: 2.39s;
+            -ms-animation-delay: 2.39s;
+            -webkit-animation-delay: 2.39s;
+            -moz-animation-delay: 2.39s;
+        }
+
+
+
+
+        @keyframes bounce_fountainTextG {
+            0% {
+                transform: scale(1);
+                color: rgb(0,0,0);
+            }
+
+            100% {
+                transform: scale(.5);
+                color: rgb(255,255,255);
+            }
+        }
+
+        @-o-keyframes bounce_fountainTextG {
+            0% {
+                -o-transform: scale(1);
+                color: rgb(0,0,0);
+            }
+
+            100% {
+                -o-transform: scale(.5);
+                color: rgb(255,255,255);
+            }
+        }
+
+        @-ms-keyframes bounce_fountainTextG {
+            0% {
+                -ms-transform: scale(1);
+                color: rgb(0,0,0);
+            }
+
+            100% {
+                -ms-transform: scale(.5);
+                color: rgb(255,255,255);
+            }
+        }
+
+        @-webkit-keyframes bounce_fountainTextG {
+            0% {
+                -webkit-transform: scale(1);
+                color: rgb(0,0,0);
+            }
+
+            100% {
+                -webkit-transform: scale(.5);
+                color: rgb(255,255,255);
+            }
+        }
+
+        @-moz-keyframes bounce_fountainTextG {
+            0% {
+                -moz-transform: scale(1);
+                color: rgb(0,0,0);
+            }
+
+            100% {
+                -moz-transform: scale(.5);
+                color: rgb(255,255,255);
+            }
+        }
+
+        #map {
+            height: 50%;
+        }
+        /* Optional: Makes the sample page fill the window. */
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+
+        #floating-panel {
+            position: static;
+            top: 10px;
+            left: 25%;
+            z-index: 5;
+            background-color: #fff;
+            padding: 5px;
+            border: 1px solid #999;
+            text-align: center;
+            font-family: 'Roboto','sans-serif';
+            line-height: 30px;
+            padding-left: 10px;
+        }
+
+        .btn1 {
+            background-color: #cf2d2d;
+        }
+
+        .btn2 {
+            background-color: #61d257
+        }
+    </style>
+    <script type="text/javascript" charset="utf-8">
+
+        var pictureSource;   // picture source
+        var destinationType; // sets the format of returned value
+        var image = "";
+        var makeblob;
+        var hello;
+        var audiod;
+        makeblob = function (dataURL) {
+            var BASE64_MARKER = ';base64,';
+            if (dataURL.indexOf(BASE64_MARKER) == -1) {
+                var parts = dataURL.split(',');
+                var contentType = parts[0].split(':')[1];
+                var raw = decodeURIComponent(parts[1]);
+                return new Blob([raw], { type: contentType });
+            }
+            var parts = dataURL.split(BASE64_MARKER);
+            var contentType = parts[0].split(':')[1];
+            var raw = window.atob(parts[1]);
+            var rawLength = raw.length;
+
+            var uInt8Array = new Uint8Array(rawLength);
+
+            for (var i = 0; i < rawLength; ++i) {
+                uInt8Array[i] = raw.charCodeAt(i);
+            }
+
+            return new Blob([uInt8Array], { type: contentType });
+        }
+
+        // Wait for device API libraries to load
+        //
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        // device APIs are available
+        //
+        function onDeviceReady() {
+            pictureSource = navigator.camera.PictureSourceType;
+            destinationType = navigator.camera.DestinationType;
+        }
+
+        // Called when a photo is successfully retrieved
+        //
+        function onPhotoDataSuccess(imageData) {
+            // Uncomment to view the base64-encoded image data
+            // console.log(imageData);
+
+            // Get image handle
+            //
+            document.getElementById("loader").style.display = "block";
+            document.getElementById("audio").style.display = "none";
+            document.getElementById("flip").style.display = "none";
+            document.getElementById("map1").style.display = "none";
+            document.getElementById("map").innerHTML = "";
+            var smallImage = document.getElementById('smallImage');
+
+            var descriptionn = document.getElementById('descriptionn');
+            descriptionn.innerHTML = "";
+            image = "data:image/jpeg;base64," + imageData;
+            // Unhide image elements
+            //
+            smallImage.style.display = 'block';
+
+            // Show the captured photo
+            // The in-line CSS rules are used to resize the image
+            //
+            smallImage.src = "data:image/jpeg;base64," + imageData;
+
+            var json = {
+                "requests": [
+                    {
+                        "features": [
+                            {
+                                "type": "LANDMARK_DETECTION"
+                            }
+                        ],
+                        "image": {
+                            "content": imageData
+                        }
+                    }
+                ]
+            };
+
+
+            $.ajax({
+                url: "https://vision.googleapis.com/v1/images:annotate?fields=responses/landmarkAnnotations&key=AIzaSyB2NnFweoG_OkkqtHARN1Uceq4dvYQ6LMo",
+
+                method: "POST",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Content-Type", "application/json");
+                },
+                data: JSON.stringify(json),
+                success: function (reponse) {
+                    var data = reponse;
+                    if (data.responses[0].hasOwnProperty('landmarkAnnotations')) {
+                        console.log(reponse);
+                        hello = data.responses[0].landmarkAnnotations[0].description;
+                        // var data = reponse;
+                        //   hello = data.responses[0].landmarkAnnotations[0].description;
+                        // descriptionn.innerHTML = "Name: " + data.responses[0].landmarkAnnotations[0].description;
+
+
+                        steptwo();
+
+                    }
+                    else {
+
+                        stepone();
+                    }
+                },
+            })
+        }
+        function stepone() {
+            $.ajax({
+                url: "https://southcentralus.api.cognitive.microsoft.com/customvision/v1.0/Prediction/db2a6811-408c-41b9-9684-99e03d64b8c8/image",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Content-Type", "application/octet-stream");
+                    xhr.setRequestHeader("Prediction-key", "d426278496554360b0f5e15c0f103e6d");
+                },
+                type: "POST",
+                processData: false,
+                data: makeblob(image),
+                success: function (reponse) {
+                    console.log(reponse);
+                    var data = reponse;
+                    var a = parseFloat(data.Predictions[0].Probability);
+                    if (a > 0.1) {
+                        hello = data.Predictions[0].Tag;
+                        steptwo();
+                    }
+                    else {
+                        document.getElementById("loader").style.display = "none";
+                        descriptionn.innerHTML = "Note: Could not recognised it as an attraction. Please take another photo.";
+                    }
+                },
+            })
+        }
+        function steptwo() {
+            $.ajax({
+                url: 'http://mp02.mybitmp.org/friendzone/getplace.php?aname=' + hello,
+                dataType: 'text',
+                success: function (done) {
+                    // alert(done);
+                    var data = done;
+
+
+                    var json1 = JSON.parse(data);
+                    if (json1 == "") {
+                        descriptionn.innerHTML = "<p><strong>Name: </strong>" + hello + "</p><p><strong>Description: No Attraction details can be found. </strong></p>";
+                        document.getElementById("loader").style.display = "none";
+                    }
+                    else {
+                        for (var j = 0, length = json1.length; j < length; j++) {
+                            var data1 = json1[j].adescription;
+
+
+                            descriptionn.innerHTML = "<p><strong>Name: </strong>" + hello + "</p><p><strong>Description: </strong>" + json1[j].adescription + "</p>";
+                            document.getElementById("loader").style.display = "none";
+                            var latt1 = json1[j].alat;
+                            var lngg1 = json1[j].alng;
+                            //alert(latt1);
+                            //alert(lngg1);
+
+                            localStorage.setItem("latt1", latt1);
+                            localStorage.setItem("lngg1", lngg1);
+                            audiod = data1;
+
+                            document.getElementById("audio").style.display = "block";
+                            document.getElementById("flip").style.display = "block";
+                            document.getElementById("map1").style.display = "block";
+                            initMap();
+
+                            aname = json1[j].aname;
+                            var frequency = parseInt(json1[j].frequency);
+                            //alert(frequency);
+                            var freqeuncyplus = frequency + 1;
+
+                            var url = "http://mp02.mybitmp.org/friendzone" + "/plus.php" + "?frequency=" + freqeuncyplus + "&aname=" + aname;
+                            //alert(url);
+                            var JSONObject = {
+                                "frequency": freqeuncyplus,
+                                "aname": aname
+                            };
+                            $.ajax({
+                                url: url,
+                                type: 'GET',
+                                data: JSONObject,
+                                dataType: 'json',
+                                contentType: "application/json; charset=utf-8",
+                                success: function (arr) {
+
+                                    console.log("yay plus liao");
+                                    changeplus(arr);
+
+                                },
+                                error: function () {
+                                    console.log("seh for plus");
+                                }
+                            });
+
+                            //function changeplus(arr) {
+                            //    if (arr[0].result === 1) {
+                            //        validationMsgs("Description changed", "Validation", "OK");
+                            //    } else {
+                            //        validationMsgs("Description update failed", "Validation", "Try Again");
+                            //    }
+                            //}
+                            //function validationMsgs(message, title, button) {
+                            //    navigator.notification.alert(message,
+                            //        function () { }, title, button);
+                            //}
+
+                        }
+                    }
+                }
+            })
+        }
+        //2nd
+        function onPhotoDataSuccesss(imageData) {
+            // Uncomment to view the base64-encoded image data
+            // console.log(imageData);
+
+            // Get image handle
+            //
+            var smallImage = document.getElementById('smallImage');
+            var descriptionn = document.getElementById('descriptionn');
+
+            // Unhide image elements
+            //
+            smallImage.style.display = 'block';
+
+            // Show the captured photo
+            // The in-line CSS rules are used to resize the image
+            //
+            smallImage.src = "data:image/jpeg;base64," + imageData;
+            image = "data:image/jpeg;base64," + imageData;
+
+            $.ajax({
+                url: "https://southcentralus.api.cognitive.microsoft.com/customvision/v1.0/Prediction/db2a6811-408c-41b9-9684-99e03d64b8c8/image?iterationId=76719308-181e-4de5-a840-13637859b7e3",
+                beforeSend: function (xhr) {
+                    xhr.setRequestHeader("Content-Type", "application/octet-stream");
+                    xhr.setRequestHeader("Prediction-key", "d426278496554360b0f5e15c0f103e6d");
+                },
+                type: "POST",
+                processData: false,
+                data: makeblob(image),
+                success: function (reponse) {
+                    console.log(JSON.stringify(reponse));
+                    var data = reponse;
+                    descriptionn.innerHTML = "Name: " + data.Predictions[0].Tag;
+                },
+            });
+
+
+        }
+        // Called when a photo is successfully retrieved
+        //
+        function onPhotoURISuccess(imageURI) {
+            // Uncomment to view the image file URI
+            // console.log(imageURI);
+
+            // Get image handle
+            //
+            var largeImage = document.getElementById('largeImage');
+
+            // Unhide image elements
+            //
+            largeImage.style.display = 'block';
+
+            // Show the captured photo
+            // The in-line CSS rules are used to resize the image
+            //
+            largeImage.src = imageURI;
+        }
+
+        // A button will call this function
+        //
+        function capturePhoto() {
+            // Take picture using device camera and retrieve image as base64-encoded string
+            navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
+                quality: 50,
+                destinationType: destinationType.DATA_URL
+            });
+        }
+        //2nd
+        function capturePhotoo() {
+            // Take picture using device camera and retrieve image as base64-encoded string
+            navigator.camera.getPicture(onPhotoDataSuccesss, onFail, {
+                quality: 50,
+                destinationType: destinationType.DATA_URL
+            });
+        }
+        // A button will call this function
+        //
+        function capturePhotoEdit() {
+            // Take picture using device camera, allow edit, and retrieve image as base64-encoded string
+            navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
+                quality: 20, allowEdit: true,
+                destinationType: destinationType.DATA_URL
+            });
+        }
+
+        // A button will call this function
+        //
+        function getPhoto(source) {
+            // Retrieve image file location from specified source
+            navigator.camera.getPicture(onPhotoURISuccess, onFail, {
+                quality: 50,
+                destinationType: destinationType.FILE_URI,
+                sourceType: source
+            });
+        }
+
+        // Called if something bad happens.
+        //
+        function onFail(message) {
+            alert('Failed because: ' + message);
+        }
+        function initMap() {
+            var directionsDisplay = new google.maps.DirectionsRenderer;
+            var directionsService = new google.maps.DirectionsService;
+            var map = new google.maps.Map(document.getElementById('map'), {
+                zoom: 14,
+                center: { lat: 1.3928377383, lng: 103.82903741 }
+            });
+            function watchPosition() {
+                var options = {
+                    maximumAge: 3600000,
+                    enableHighAccuracy: true,
+                }
+                var watchID = navigator.geolocation.watchPosition(onSuccess, onError, options);
+
+                function onSuccess(position) {
+                    /* console.log('Latitude: ' + position.coords.latitude + '\n' +
+                          'Longitude: ' + position.coords.longitude + '\n' +
+                          'Altitude: ' + position.coords.altitude + '\n' +
+                          'Accuracy: ' + position.coords.accuracy + '\n' +
+                          'Altitude Accuracy: ' + position.coords.altitudeAccuracy + '\n' +
+                          'Heading: ' + position.coords.heading + '\n' +
+                          'Speed: ' + position.coords.speed + '\n' +
+                          'Timestamp: ' + position.timestamp + '\n');*/
+                    var lat = position.coords.latitude
+                    var lng = position.coords.longitude
+                    var myposition = { lat, lng };
+                    localStorage.setItem("latt", lat);
+                    localStorage.setItem("lngg", lng);
+                    // localStorage.setItem("lat", lat);
+                    //localStorage.setItem("lng", lng);
+                    //localStorage.setItem("myposition", myposition);
+
+
+                    var latlng = new google.maps.LatLng(myposition);
+                    marker1.setPosition(latlng);
+                    console.log(latlng);
+                    var username = localStorage.getItem("username");
+                    $.ajax({
+                        url: 'http://mp02.mybitmp.org/friendzone/savenewlocation.php?currentlocation=' + lat + ',' + lng + '&userid=' + username,
+                        dataType: 'json',
+                        success: function (done) {
+
+                            var data = done;
+
+                            /*    var x = document.getElementById("demo");
+                                x.innerHTML = "Latitude: " + lat +
+                                    "<br>Longitude: " + lng;*/
+                        }
+                    })
+                    // var myposition = localStorage.getItem("myposition");
+
+                    // var changepoint = parseFloat(lat, lng)
+                };
+
+                function onError(error) {
+                    alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
+                }
+            }
+            watchPosition();
+            var marker1 = new google.maps.Marker({
+                map: map,
+                icon: 'images/current.png',
+                title: 'mylocation'
+            });
+
+            directionsDisplay.setMap(map);
+            calculateAndDisplayRoute(directionsService, directionsDisplay);
+            document.getElementById('mode').addEventListener('change', function () {
+                calculateAndDisplayRoute(directionsService, directionsDisplay);
+            });
+
+        }
+
+        function calculateAndDisplayRoute(directionsService, directionsDisplay) {
+            var selectedMode = document.getElementById('mode').value;
+            var lat1 = localStorage.getItem("latt");
+            var lng1 = localStorage.getItem("lngg");
+            var lat2 = localStorage.getItem("latt1");
+            var lng2 = localStorage.getItem("lngg1");
+            var x = parseFloat(lat1);
+            var y = parseFloat(lng1);
+            var xx = parseFloat(lat2);
+            var yy = parseFloat(lng2);
+            //alert(x);
+            //alert(y);
+            directionsService.route({
+                origin: { lat: x, lng: y },  // Haight.
+                destination: { lat: xx, lng: yy },  // Ocean Beach.
+                // Note that Javascript allows us to access the constant
+                // using square brackets and a string value as its
+                // "property."
+                travelMode: google.maps.TravelMode[selectedMode]
+            }, function (response, status) {
+                if (status == 'OK') {
+                    directionsDisplay.setDirections(response);
+                } else {
+                    alert("Information about transit services are unavailable")
+                    //window.alert('Directions request failed due to ' + status);
+                }
+            });
+        }
+        //function audio1() {
+        //    TTS
+        //        .speak({
+        //            text: null,
+        //            locale: 'en-US',
+        //            rate: 0.75
+        //        }, function () {
+        //            console.log('success');
+        //            document.getElementById("audio").style.display = "none";
+        //            document.getElementById("audioo").style.display = "block";
+        //        }, function (reason) {
+        //            alert(reason);
+        //        });
+
+
+        //}
+        function audio1() {
+            TTS
+                .speak({
+                    text: audiod,
+                    locale: 'en-US',
+                    rate: 0.75
+                }, function () {
+
+                    console.log('success');
+                }, function (reason) {
+                    alert(reason);
+                });
+            document.getElementById("audio").style.display = "none";
+            document.getElementById("audioo").style.display = "block";
+
+        }
+        function audio2() {
+            TTS
+                .speak({
+                    text: ' ',
+                    locale: 'en-US',
+                    rate: 0.75
+                }, function () {
+
+                    console.log('success');
+                }, function (reason) {
+                    alert(reason);
+                });
+            document.getElementById("audioo").style.display = "none";
+            document.getElementById("audio").style.display = "block";
+
+        }
+        $(document).ready(function () {
+            $("#flip").click(function () {
+                $("#panel").slideToggle("slow");
+            });
+        });
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAsXKZ6nO3OlTu8NDkiCtiPST9lTqPeR7M&callback=initMap">
+    </script>
+</head>
+<body>
+    <header class="w3-container w3-indigo">
+        <center><h2>E'spore</h2></center>
+    </header>
+    <p><h4>Snap landmark near you and behold the fun and interesting facts about it.</h4></p>
+    <button class="ui-btn ui-shadow" onclick="capturePhoto();">Snap it   <i class="fa fa-camera-retro"></i></button> <br>
+    <!-- <button onclick="capturePhotoo();">Capture Photo Micro</button> <br>
+      <button onclick="capturePhotoEdit();">Capture Editable Photo</button> <br>
+      <button onclick="getPhoto(pictureSource.PHOTOLIBRARY);">From Photo Library</button><br>
+      <button onclick="getPhoto(pictureSource.SAVEDPHOTOALBUM);">From Photo Album</button><br>-->
+    <center><img style="display:none;width:100%;" id="smallImage" src="" /></center>
+    <div id="loader" style="display:none;">
+        <div id="fountainTextG"><div id="fountainTextG_1" class="fountainTextG">A</div><div id="fountainTextG_2" class="fountainTextG">n</div><div id="fountainTextG_3" class="fountainTextG">a</div><div id="fountainTextG_4" class="fountainTextG">l</div><div id="fountainTextG_5" class="fountainTextG">y</div><div id="fountainTextG_6" class="fountainTextG">s</div><div id="fountainTextG_7" class="fountainTextG">i</div><div id="fountainTextG_8" class="fountainTextG">n</div><div id="fountainTextG_9" class="fountainTextG">g</div><div id="fountainTextG_10" class="fountainTextG">.</div><div id="fountainTextG_11" class="fountainTextG">.</div><div id="fountainTextG_12" class="fountainTextG">.</div></div>
+    </div>
+    <button id="flip" class="ui-btn ui-shadow" style="display:none;">Details <i class="fa fa-book"></i></button>
+    <div id="panel">
+        <article class="w3-container">
+            <p id="descriptionn"></p>
+        </article>
+    </div>
+    <div id="audio" style="display:none;">
+        <button class="ui-btn ui-shadow btn2" onclick="audio1();">Start   <i class="fa fa-volume-up"></i></button>
+    </div>
+    <div id="audioo" style="display:none;">
+        <button class="ui-btn ui-shadow btn1" onclick="audio2();">Stop   <i class="fa fa-volume-off"></i></button>
+    </div>
+    <div id="map1" style="display:none;">
+        <div id="floating-panel">
+            <b>Mode of Travel: </b>
+            <select id="mode">
+                <option value="DRIVING">Driving</option>
+                <option value="WALKING">Walking</option>
+                <option value="BICYCLING">Bicycling</option>
+                <option value="TRANSIT">Transit</option>
+            </select>
+        </div>
+    </div>
+    <div id="map"></div>
+    <!--<img style="display:none;" id="largeImage" src="" />-->
+</body>
+</html>

@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-   highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
+    <!--<link rel="stylesheet" type="text/css" href="css/index.css">-->
+    <!--<link rel="stylesheet" type="text/css" href="css/head.css">-->
+    <link rel="stylesheet" type="text/css" href="css/newuser.css">
+    <link rel="stylesheet" href="css/Content/jquery.mobile-1.4.5.min.css">
+    <style>
+        body {
+            background-image: url("gradient_bg.png");
+        }
+    </style>
+    <script src="lib/jquery/jquery-3.2.1.min.js"></script>
+    <script src="lib/jquery/jquery.validate.min.js"></script>
+
+    <script type="text/javascript" src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_iIiv6VSevK9Yoso9ENegV");
+        })();
+    </script>
+
+
+
+
+
+    <title>New User</title>
+</head>
+<body>
+
+    <div>
+        <div class="body"></div>
+        <div class="grad"></div>
+        <div class="header">
+            <div><img class="logo" src="images/logo.png" /></div>
+        </div>
+        <br>
+
+        <div class="create">
+            <div role="main" class="ui-content" id="main-ui">
+                <form name="NewUserForm" id="NewUserForm">
+                    <div data-role="fieldcontainer">
+                        <label for="txtNewName">User ID</label>
+                        <input type="text" name="txtNewName" id="txtNewName" placeholder="enter user ID" required>
+                    </div>
+
+                    <div data-role="fieldcontainer">
+                        <label for="txtNewEmail">Email</label>
+                        <input type="text" name="txtNewEmail" id="txtNewEmail" placeholder="enter email" required>
+                    </div>
+
+                    <div data-role="fieldcontainer">
+                        <label for="txtNewPassword">Password</label>
+                        <input type="password" name="txtNewPassword" id="txtNewPassword" placeholder="enter password" required>
+                    </div>
+
+
+
+                    <div data-role="fieldcontainer">
+                        <label for="txtNewPasswordAgain">Re-Enter Password</label>
+                        <input type="password" name="txtNewPasswordAgain" id="txtNewPasswordAgain" placeholder="enter password again" required>
+                    </div>
+                    <div data-role="fieldcontainer">
+                        <label for="interest"> Type of person:</label>
+                        <select class="w3-inputw3-padding-16" name="interest" id="interest">
+                            <option value="adventurous">Adventurous</option>
+                            <option value="food lover">Food Lover</option>
+                            <option value="shopping">Shopping lover</option>
+                        </select>
+                    </div>
+                    <div data-role="fieldcontainer">
+                        <img id="imgNewUser" height="100">
+                        <input type="button" class="ui-btn ui-shadow" name="selectimg" id="btnSelectImg" value="My Picture">
+                    </div>
+
+                    <div data-role="fieldcontainer">
+                        <label for="description"> About Me:</label><br>
+                        <textarea rows="8" name="description" id="description"></textarea>
+                    </div>
+
+                    <input type="button" class="ui-btn ui-shadow" id="btnCreateAccount" value="Create Account">
+                </form>
+            </div>
+            <div class="footer">
+                Copyright &copy; 2018 E'Spore
+            </div>
+        </div>
+
+    </div>
+
+    <!--<script>
+        // When the user scrolls the page, execute myFunction
+        window.onscroll = function () { myFunction() };
+
+        function myFunction() {
+            var winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            var height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            var scrolled = (winScroll / height) * 100;
+            document.getElementById("myBar").style.width = scrolled + "%";
+        }
+    </script>-->
+
+
+
+    <div class="footer">
+        Copyright &copy; 2018 E'Spore
+    </div>
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script src="scripts/newuser.js"></script>
+</body>
+</html>

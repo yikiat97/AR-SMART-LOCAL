@@ -1,0 +1,525 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Translate</title>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+    <script src="lib/jquery.mobile-1.4.5.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+    <meta charset=utf-8 />
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <style>
+        #fountainTextG {
+            width: 360px;
+            margin: auto;
+        }
+
+        .fountainTextG {
+            color: rgb(0,0,0);
+            font-family: Arial;
+            font-size: 30px;
+            text-decoration: none;
+            font-weight: normal;
+            font-style: normal;
+            float: left;
+            animation-name: bounce_fountainTextG;
+            -o-animation-name: bounce_fountainTextG;
+            -ms-animation-name: bounce_fountainTextG;
+            -webkit-animation-name: bounce_fountainTextG;
+            -moz-animation-name: bounce_fountainTextG;
+            animation-duration: 2.09s;
+            -o-animation-duration: 2.09s;
+            -ms-animation-duration: 2.09s;
+            -webkit-animation-duration: 2.09s;
+            -moz-animation-duration: 2.09s;
+            animation-iteration-count: infinite;
+            -o-animation-iteration-count: infinite;
+            -ms-animation-iteration-count: infinite;
+            -webkit-animation-iteration-count: infinite;
+            -moz-animation-iteration-count: infinite;
+            animation-direction: normal;
+            -o-animation-direction: normal;
+            -ms-animation-direction: normal;
+            -webkit-animation-direction: normal;
+            -moz-animation-direction: normal;
+            transform: scale(.5);
+            -o-transform: scale(.5);
+            -ms-transform: scale(.5);
+            -webkit-transform: scale(.5);
+            -moz-transform: scale(.5);
+        }
+
+        #fountainTextG_1 {
+            animation-delay: 0.75s;
+            -o-animation-delay: 0.75s;
+            -ms-animation-delay: 0.75s;
+            -webkit-animation-delay: 0.75s;
+            -moz-animation-delay: 0.75s;
+        }
+
+        #fountainTextG_2 {
+            animation-delay: 0.9s;
+            -o-animation-delay: 0.9s;
+            -ms-animation-delay: 0.9s;
+            -webkit-animation-delay: 0.9s;
+            -moz-animation-delay: 0.9s;
+        }
+
+        #fountainTextG_3 {
+            animation-delay: 1.05s;
+            -o-animation-delay: 1.05s;
+            -ms-animation-delay: 1.05s;
+            -webkit-animation-delay: 1.05s;
+            -moz-animation-delay: 1.05s;
+        }
+
+        #fountainTextG_4 {
+            animation-delay: 1.2s;
+            -o-animation-delay: 1.2s;
+            -ms-animation-delay: 1.2s;
+            -webkit-animation-delay: 1.2s;
+            -moz-animation-delay: 1.2s;
+        }
+
+        #fountainTextG_5 {
+            animation-delay: 1.35s;
+            -o-animation-delay: 1.35s;
+            -ms-animation-delay: 1.35s;
+            -webkit-animation-delay: 1.35s;
+            -moz-animation-delay: 1.35s;
+        }
+
+        #fountainTextG_6 {
+            animation-delay: 1.5s;
+            -o-animation-delay: 1.5s;
+            -ms-animation-delay: 1.5s;
+            -webkit-animation-delay: 1.5s;
+            -moz-animation-delay: 1.5s;
+        }
+
+        #fountainTextG_7 {
+            animation-delay: 1.64s;
+            -o-animation-delay: 1.64s;
+            -ms-animation-delay: 1.64s;
+            -webkit-animation-delay: 1.64s;
+            -moz-animation-delay: 1.64s;
+        }
+
+        #fountainTextG_8 {
+            animation-delay: 1.79s;
+            -o-animation-delay: 1.79s;
+            -ms-animation-delay: 1.79s;
+            -webkit-animation-delay: 1.79s;
+            -moz-animation-delay: 1.79s;
+        }
+
+        #fountainTextG_9 {
+            animation-delay: 1.94s;
+            -o-animation-delay: 1.94s;
+            -ms-animation-delay: 1.94s;
+            -webkit-animation-delay: 1.94s;
+            -moz-animation-delay: 1.94s;
+        }
+
+        #fountainTextG_10 {
+            animation-delay: 2.09s;
+            -o-animation-delay: 2.09s;
+            -ms-animation-delay: 2.09s;
+            -webkit-animation-delay: 2.09s;
+            -moz-animation-delay: 2.09s;
+        }
+
+        #fountainTextG_11 {
+            animation-delay: 2.24s;
+            -o-animation-delay: 2.24s;
+            -ms-animation-delay: 2.24s;
+            -webkit-animation-delay: 2.24s;
+            -moz-animation-delay: 2.24s;
+        }
+
+        #fountainTextG_12 {
+            animation-delay: 2.39s;
+            -o-animation-delay: 2.39s;
+            -ms-animation-delay: 2.39s;
+            -webkit-animation-delay: 2.39s;
+            -moz-animation-delay: 2.39s;
+        }
+
+
+
+
+        @keyframes bounce_fountainTextG {
+            0% {
+                transform: scale(1);
+                color: rgb(0,0,0);
+            }
+
+            100% {
+                transform: scale(.5);
+                color: rgb(255,255,255);
+            }
+        }
+
+        @-o-keyframes bounce_fountainTextG {
+            0% {
+                -o-transform: scale(1);
+                color: rgb(0,0,0);
+            }
+
+            100% {
+                -o-transform: scale(.5);
+                color: rgb(255,255,255);
+            }
+        }
+
+        @-ms-keyframes bounce_fountainTextG {
+            0% {
+                -ms-transform: scale(1);
+                color: rgb(0,0,0);
+            }
+
+            100% {
+                -ms-transform: scale(.5);
+                color: rgb(255,255,255);
+            }
+        }
+
+        @-webkit-keyframes bounce_fountainTextG {
+            0% {
+                -webkit-transform: scale(1);
+                color: rgb(0,0,0);
+            }
+
+            100% {
+                -webkit-transform: scale(.5);
+                color: rgb(255,255,255);
+            }
+        }
+
+        @-moz-keyframes bounce_fountainTextG {
+            0% {
+                -moz-transform: scale(1);
+                color: rgb(0,0,0);
+            }
+
+            100% {
+                -moz-transform: scale(.5);
+                color: rgb(255,255,255);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="w3-container w3-indigo">
+        <center><h2>E'spore</h2></center>
+    </header>
+    <script type="text/javascript">
+
+        var pictureSource;   // picture source
+        var destinationType; // sets the format of returned value
+        var image = "";
+        var makeblob;
+
+        makeblob = function (dataURL) {
+            var BASE64_MARKER = ';base64,';
+            if (dataURL.indexOf(BASE64_MARKER) == -1) {
+                var parts = dataURL.split(',');
+                var contentType = parts[0].split(':')[1];
+                var raw = decodeURIComponent(parts[1]);
+                return new Blob([raw], { type: contentType });
+            }
+            var parts = dataURL.split(BASE64_MARKER);
+            var contentType = parts[0].split(':')[1];
+            var raw = window.atob(parts[1]);
+            var rawLength = raw.length;
+
+            var uInt8Array = new Uint8Array(rawLength);
+
+            for (var i = 0; i < rawLength; ++i) {
+                uInt8Array[i] = raw.charCodeAt(i);
+            }
+
+            return new Blob([uInt8Array], { type: contentType });
+        }
+
+
+        // Wait for device API libraries to load
+        //
+        document.addEventListener("deviceready", onDeviceReady, false);
+
+        // device APIs are available
+        //
+        function onDeviceReady() {
+            pictureSource = navigator.camera.PictureSourceType;
+            destinationType = navigator.camera.DestinationType;
+        }
+
+
+
+        // Called if something bad happens.
+        //
+        function onFail(message) {
+            alert('Failed because: ' + message);
+        }
+
+        function onPhotoDataSuccess(imageData) {
+            // Uncomment to view the base64-encoded image data
+            // console.log(imageData);
+
+            // Get image handle
+            //
+            var smallImage = document.getElementById('smallImage');
+
+            // Unhide image elements
+            //
+            smallImage.style.display = 'block';
+
+            // Show the captured photo
+            // The in-line CSS rules are used to resize the image
+            //
+            smallImage.src = "data:image/jpeg;base64," + imageData;
+            image = "data:image/jpeg;base64," + imageData;
+
+
+            processImage();
+
+        }
+
+
+        function processImage() {
+            // **********************************************
+            // *** Update or verify the following values. ***
+            // **********************************************
+
+            // Replace the subscriptionKey string value with your valid subscription key.
+            var subscriptionKey = "03f1ac389ab1462da79b029323121721";
+
+            // Replace or verify the region.
+            //
+            // You must use the same region in your REST API call as you used to obtain your subscription keys.
+            // For example, if you obtained your subscription keys from the westus region, replace
+            // "westcentralus" in the URI below with "westus".
+            //
+            // NOTE: Free trial subscription keys are generated in the westcentralus region, so if you are using
+            // a free trial subscription key, you should not need to change this region.
+            var uriBase = "https://westcentralus.api.cognitive.microsoft.com/vision/v1.0/ocr";
+            var descriptionr = document.getElementById('descriptionr');
+            descriptionr.innerHTML = "";
+            document.getElementById("loader").style.display = "block";
+            // Request parameters.
+            var params = {
+                "language": "unk",
+                "detectOrientation ": "true",
+            };
+
+
+            // Perform the REST API call.
+            $.ajax({
+                url: uriBase + "?" + $.param(params),
+
+                // Request headers.
+                beforeSend: function (jqXHR) {
+                    jqXHR.setRequestHeader("Content-Type", "application/octet-stream");
+                    jqXHR.setRequestHeader("Ocp-Apim-Subscription-Key", subscriptionKey);
+                },
+
+                type: "POST",
+                processData: false,
+
+                // Request body.
+                data: makeblob(image)
+            })
+
+                .done(function (data) {
+                    // Show formatted JSON on webpage.
+                    var data = data
+                    var text = ""
+                    //console.log(data)
+
+                    for (var m = 0; m < data.regions.length; m++) {
+                        for (var i = 0; i < data.regions[m].lines.length; i++) {
+                            for (var j = 0; j < data.regions[m].lines[i].words.length; j++) {
+
+                                var a = data.regions[m].lines[i].words[j].text + ' ';
+                                console.log(a)
+                                for (k = 0; k < a.length; k++) {
+                                    text += a[k];
+
+
+                                }
+                            }
+
+                        }
+                    }
+                    console.log(text)
+                    localStorage.setItem("text", text);
+
+
+
+                    var data = JSON.stringify(data);
+                    // $("#responseTextArea").val(text);
+
+                    function start() {
+
+                        var text = localStorage.getItem("text");
+                        // Initializes the client with the API key and the Translate API.
+                        gapi.client.init({
+                            'apiKey': 'AIzaSyCNY3d9yDgMB-IsC1DO-EoZ_XFFkh8jMfw',
+                            'discoveryDocs': ['https://translation.googleapis.com/$discovery/rest?version=v2'],
+                        }).then(function () {
+                            // Executes an API request, and returns a Promise.
+                            // The method name `language.translations.list` comes from the API discovery.
+                            return gapi.client.language.translations.list({
+                                q: text,
+                                //source: 'en',
+                                target: document.getElementById("ddlTarget").value,
+                            });
+                        }).then(function (response) {
+                            var c = response.result.data.translations[0].translatedText
+                            //  console.log(c);
+                            document.getElementById("loader").style.display = "none";
+                            descriptionr.innerHTML = "<strong>Result: </strong><br>" + c;
+                            // $("#results").val(c);
+
+                        }, function (reason) {
+                            console.log('Error: ' + reason.result.error.message);
+                            //document.getElementById("translateText").innerHTML = text;
+                        });
+                    };
+
+                    // Loads the JavaScript client library and invokes `start` afterwards.
+                    gapi.load('client', start);
+
+                })
+
+                .fail(function (jqXHR, textStatus, errorThrown) {
+                    // Display error message.
+                    var errorString = (errorThrown === "") ? "Error. " : errorThrown + " (" + jqXHR.status + "): ";
+                    errorString += (jqXHR.responseText === "") ? "" : (jQuery.parseJSON(jqXHR.responseText).message) ?
+                        jQuery.parseJSON(jqXHR.responseText).message : jQuery.parseJSON(jqXHR.responseText).error.message;
+                    alert("Words cannot be captured, please try again");
+                });
+
+
+
+        };
+        function capturePhoto() {
+
+            // Take picture using device camera and retrieve image as base64-encoded string
+            navigator.camera.getPicture(onPhotoDataSuccess, onFail, {
+                quality: 50,
+                destinationType: destinationType.DATA_URL
+            });
+
+        }
+
+
+
+    </script>
+    The image will be translated to: <br>
+    <!--THIS IS DROPDOWN LIST-->
+    <select id="ddlTarget">
+        <option value="AF">Afrikanns</option>
+        <option value="SQ">Albanian</option>
+        <option value="AR">Arabic</option>
+        <option value="HY">Armenian</option>
+        <option value="EU">Basque</option>
+        <option value="BN">Bengali</option>
+        <option value="BG">Bulgarian</option>
+        <option value="CA">Catalan</option>
+        <option value="KM">Cambodian</option>
+        <option value="ZH">Chinese (Mandarin)</option>
+        <option value="HR">Croation</option>
+        <option value="CS">Czech</option>
+        <option value="DA">Danish</option>
+        <option value="NL">Dutch</option>
+        <option value="EN">English</option>
+        <option value="ET">Estonian</option>
+        <option value="FJ">Fiji</option>
+        <option value="FI">Finnish</option>
+        <option value="FR">French</option>
+        <option value="KA">Georgian</option>
+        <option value="DE">German</option>
+        <option value="EL">Greek</option>
+        <option value="GU">Gujarati</option>
+        <option value="HE">Hebrew</option>
+        <option value="HI">Hindi</option>
+        <option value="HU">Hungarian</option>
+        <option value="IS">Icelandic</option>
+        <option value="ID">Indonesian</option>
+        <option value="GA">Irish</option>
+        <option value="IT">Italian</option>
+        <option value="JA">Japanese</option>
+        <option value="JW">Javanese</option>
+        <option value="KO">Korean</option>
+        <option value="LA">Latin</option>
+        <option value="LV">Latvian</option>
+        <option value="LT">Lithuanian</option>
+        <option value="MK">Macedonian</option>
+        <option value="MS">Malay</option>
+        <option value="ML">Malayalam</option>
+        <option value="MT">Maltese</option>
+        <option value="MI">Maori</option>
+        <option value="MR">Marathi</option>
+        <option value="MN">Mongolian</option>
+        <option value="NE">Nepali</option>
+        <option value="NO">Norwegian</option>
+        <option value="FA">Persian</option>
+        <option value="PL">Polish</option>
+        <option value="PT">Portuguese</option>
+        <option value="PA">Punjabi</option>
+        <option value="QU">Quechua</option>
+        <option value="RO">Romanian</option>
+        <option value="RU">Russian</option>
+        <option value="SM">Samoan</option>
+        <option value="SR">Serbian</option>
+        <option value="SK">Slovak</option>
+        <option value="SL">Slovenian</option>
+        <option value="ES">Spanish</option>
+        <option value="SW">Swahili</option>
+        <option value="SV">Swedish </option>
+        <option value="TA">Tamil</option>
+        <option value="TT">Tatar</option>
+        <option value="TE">Telugu</option>
+        <option value="TH">Thai</option>
+        <option value="BO">Tibetan</option>
+        <option value="TO">Tonga</option>
+        <option value="TR">Turkish</option>
+        <option value="UK">Ukranian</option>
+        <option value="UR">Urdu</option>
+        <option value="UZ">Uzbek</option>
+        <option value="VI">Vietnamese</option>
+        <option value="CY">Welsh</option>
+        <option value="XH">Xhosa</option>
+    </select>
+    <br>
+    <button class="ui-btn ui-shadow" onclick="capturePhoto();">Snap it   <i class="fa fa-camera-retro"></i></button> <br>
+
+    <img style=" display:none; width:100%; height:auto; " id="smallImage" src="" />
+
+
+    <!-- <div id="jsonOutput" style="width:600px; display:table-cell;">-->
+    <!-- <div id="load"></div>-->
+    <!--Before:<br>
+    <textarea disabled="disabled" id="responseTextArea" class="UIInput" style="width:340px; height:100px;"></textarea>-->
+    <!--After:<br>
+    <textarea disabled="disabled" id="results" class="UIInput" style="width:340px; height:300px;"></textarea>-->
+    <div id="loader" style="display:none;">
+        <div id="fountainTextG"><div id="fountainTextG_1" class="fountainTextG">A</div><div id="fountainTextG_2" class="fountainTextG">n</div><div id="fountainTextG_3" class="fountainTextG">a</div><div id="fountainTextG_4" class="fountainTextG">l</div><div id="fountainTextG_5" class="fountainTextG">y</div><div id="fountainTextG_6" class="fountainTextG">s</div><div id="fountainTextG_7" class="fountainTextG">i</div><div id="fountainTextG_8" class="fountainTextG">n</div><div id="fountainTextG_9" class="fountainTextG">g</div><div id="fountainTextG_10" class="fountainTextG">.</div><div id="fountainTextG_11" class="fountainTextG">.</div><div id="fountainTextG_12" class="fountainTextG">.</div></div>
+    </div>
+    <article class="w3-container">
+        <p id="descriptionr"></p>
+    </article>
+    <!--</div>-->
+
+    <script type="text/javascript" src="scripts/camera.js"></script>
+    <script src="scripts/index.js"></script>
+    <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+    <script type="text/javascript" src="scripts/upload.js"></script>
+</body>
+</html>

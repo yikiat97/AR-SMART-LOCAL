@@ -1,0 +1,174 @@
+﻿body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    height: 100%;
+    color: #fff;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.body {
+    position: fixed;
+    top: -20px;
+    left: -20px;
+    right: -40px;
+    bottom: -40px;
+    width: auto;
+    height: 100%;
+    background: url(http://www.mulierchile.com/amazing-scenery-wallpapers/amazing-scenery-wallpapers-010.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-filter: blur(4px);
+    z-index: 0;
+}
+
+.grad {
+    position: fixed;
+    top: -20px;
+    left: -20px;
+    right: -40px;
+    bottom: -40px;
+    width: auto;
+    height: auto;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(0,0,0,0)), color-stop(100%,rgba(0,0,0,0.65))); /* Chrome,Safari4+ */
+    z-index: 1;
+    opacity: 0.7;
+}
+
+.header {
+    position: absolute;
+    //top: 100px;
+    z-index: 2;
+}
+
+    .header div {
+        color: #fff;
+        font-family: 'Exo', sans-serif;
+        font-size: 35px;
+        font-weight: 200;
+    }
+
+        .header div img {
+            height: 110px;
+            width: 160px;
+            margin-left: 50px;
+            margin-top: 50px;
+        }
+
+
+
+        .header div span {
+            color: #5379fa !important;
+        }
+
+.footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255,255,255,0.3);
+    font-family: 'Californian FB';
+    text-align: center;
+}
+/*.scroll-container {
+    display: block;
+    width: 350px;
+    height: 200px;
+    overflow-y: scroll;
+    //scroll-behavior: smooth;
+}*/
+.create {
+    position: absolute;
+    top: calc(35% - 65px);
+    height: 130px;
+    width: 330px;
+    padding: 10px;
+    z-index: 2;
+}
+
+    .create input[type=text] {
+        width: 250px;
+        height: 30px;
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.6);
+        border-radius: 2px;
+        color: #fff;
+        font-family: 'Exo', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 4px;
+    }
+
+    .create input[type=password] {
+        width: 250px;
+        height: 30px;
+        background: transparent;
+        border: 1px solid rgba(255,255,255,0.6);
+        border-radius: 2px;
+        color: #fff;
+        font-family: 'Exo', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 4px;
+        margin-top: 10px;
+    }
+
+    .create input[type=button] {
+        width: 260px;
+        height: 35px;
+        background: #fff;
+        border: 1px solid #fff;
+        cursor: pointer;
+        border-radius: 2px;
+        color: #a18d6c;
+        font-family: 'Exo', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 6px;
+        margin-top: 10px;
+    }
+
+.w3-inputw3-padding-16 {
+    width: 260px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 2px;
+    color: #a18d6c;
+    font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 6px;
+    margin-top: 10px;
+}
+
+.create input[type=button]:hover {
+    opacity: 0.8;
+}
+
+.create input[type=button]:active {
+    opacity: 0.6;
+}
+
+.create input[type=text]:focus {
+    outline: none;
+    border: 1px solid rgba(255,255,255,0.9);
+}
+
+.create input[type=password]:focus {
+    outline: none;
+    border: 1px solid rgba(255,255,255,0.9);
+}
+
+.create input[type=button]:focus {
+    outline: none;
+}
+
+::-webkit-input-placeholder {
+    color: rgba(255,255,255,0.6);
+}
+
+::-moz-input-placeholder {
+    color: rgba(255,255,255,0.6);
+}

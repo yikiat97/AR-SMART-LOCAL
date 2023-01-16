@@ -1,0 +1,43 @@
+﻿@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+   
+}
+
+#map {
+    
+    height: 800px;
+    width: auto;
+    
+    
+    
+   
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+    background-color:white;
+}
+#agencytime {
+    height: 50px;
+    width: auto;
+    background-color:black;
+    color:white;
+    
+    
+}
+#demo {
+    background-color: white;
+    height: 50px;
+    width: auto;
+    color: black;
+}
+.TourTextBox {
+    height: 1000px;
+    background-color: white;
+    z-index: 1000;
+    opacity: 0.4;
+    border-radius: 30px 30px 30px 30px;
+    -moz-border-radius: 30px 30px 30px 30px;
+    -webkit-border-radius: 30px 30px 30px 30px;
+    border: 0px solid #000000;
+}

@@ -1,0 +1,178 @@
+* {
+    -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/*.wholepage{margin-top:-41px;}*/
+
+body {
+    margin: 0;
+    padding: 0;
+    background: black;
+    //height: 100%;
+    color: black;
+    font-family: Arial;
+    font-size: 12px;
+}
+
+.body {
+    /*position: fixed;
+    top: -20px;
+    left: -20px;
+    right: -40px;
+    bottom: -40px;
+    width: auto;
+    height: 100%;*/
+    background: url(https://i.pinimg.com/736x/a1/cb/37/a1cb37babb5f325bd9cc58b8d296fd94--galaxy-wallpaper-iphone-.jpg) no-repeat center;
+    background-size: cover;
+    //-webkit-filter: blur(4px);
+    //z-index: 0;
+}
+
+.app {
+    background: url(../images/cordova.png) no-repeat center top;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    height: 50px;
+    width: 225px;
+    text-align: center;
+    padding: 180px 0px 0px 0px;
+    margin: -115px 0px 0px -112px;
+}
+
+@media screen and (min-aspect-ratio: 1/1) and (min-width:400px) {
+    .app {
+        background-position: left center;
+        padding: 75px 0px 75px 170px;
+        margin: -90px 0px 0px -198px;
+    }
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: normal;
+    margin: 0px;
+    overflow: visible;
+    padding: 0px;
+    text-align: center;
+}
+
+.event {
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    color: #FFFFFF;
+    font-size: 12px;
+    margin: 0px 30px;
+    padding: 2px 0px;
+}
+
+    .event.listening {
+        background-color: #33333;
+        display: block;
+    }
+
+    .event.received {
+        background-color: #4B946A;
+        display: none;
+    }
+
+@keyframes fade {
+    from {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1.0;
+    }
+}
+
+@-webkit-keyframes fade {
+    from {
+        opacity: 1.0;
+    }
+
+    50% {
+        opacity: 0.4;
+    }
+
+    to {
+        opacity: 1.0;
+    }
+}
+
+.blink {
+    animation: fade 3000ms infinite;
+    -webkit-animation: fade 3000ms infinite;
+}
+
+#map {
+    height: 350px;
+    width:100%;
+}
+
+.dropdown {
+    width: 170px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 2px;
+    color: #a18d6c;
+    font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 6px;
+    margin-top: 10px;
+}
+
+.mode {
+    width: 100%;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #fff;
+    cursor: pointer;
+    border-radius: 2px;
+    color: #a18d6c;
+    font-family: 'Exo', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    position: center;
+    padding: 6px;
+    margin-top: 10px;
+}
+
+.floating-panel {
+    top: calc(40% - 65px);
+    height: 130px;
+    width: 330px;
+    padding: 10px;
+    z-index: 2;
+}
+
+    .floating-panel input[type=button] {
+        width: 100%;
+        height: 35px;
+        background: #fff;
+        border: 1px solid #fff;
+        cursor: pointer;
+        border-radius: 2px;
+        color: #a18d6c;
+        font-family: 'Exo', sans-serif;
+        font-size: 16px;
+        font-weight: 400;
+        padding: 0px;
+        margin-top: 10px;
+    }
+
+h4 {
+    margin: 0;
+    padding: 0;
+    color: #fff;
+    font-family: Cambria;
+    font-size: 16px;
+    overflow: visible;
+}

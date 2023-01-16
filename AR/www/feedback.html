@@ -1,0 +1,226 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="css/jquery.mobile-1.4.5.css">
+    <link rel="stylesheet" href="css/index.css">
+    <script src="lib/jquery.mobile-1.4.5.min.js"></script>
+
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+    <script class="jsbin" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.0/jquery-ui.min.js"></script>
+    <meta charset=utf-8 />
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
+    <script type="text/javascript" charset="utf-8" src="https://skidding.github.io/dragdealer/src/dragdealer.js"></script>
+    <style>
+        body {
+            background-image: url("http://cdn.pcwallart.com/images/san-francisco-wallpaper-3.jpg");
+        }
+
+        .container {
+            margin-top: 40px;
+            margin-bottom: 150px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        label {
+            font-weight: normal;
+        }
+
+        .form-control {
+            width: 30%;
+        }
+
+        .mainForm {
+            border: 1px solid #EEEEEE;
+            border-radius: 10px;
+            padding: 20px;
+            background-color: white;
+        }
+
+        .form-actions {
+            text-align: center;
+        }
+    </style>
+    <script src="lib/jquery/jquery.validate.min.js"></script>
+    <script>
+
+
+     
+
+        var tourid = localStorage.getItem("tourid");
+        $.ajax({
+            url: 'http://mp02.mybitmp.org/friendzone/gettourfile.php?tourid=' + tourid,
+            dataType: 'json',
+            success: function (done) {
+                console.log(done);
+
+                var done3 = done;
+                alert(done)
+
+                for (var j = 0, length = done3.length; j < length; j++) {
+                    var data = done3[j];
+                    var place = done3[j].nameoftheplace;
+                    var y = data.coordinates;
+                    localStorage.setItem("place", place);
+                    console.log(place)
+                    // y.push(data.coordinates);
+                    var partsOfStr = place.split(',');
+                    console.log(partsOfStr)
+                    var full = [];
+                    for (i = 0; i < partsOfStr.length; i++) {
+
+
+
+                            full.push(partsOfStr[i]);
+
+
+                            $("#form").append(' <br> <h3>Please rate your trip to ' + partsOfStr[i] + '.</h3><select class="form-control" id="' + partsOfStr[i] + '" name="sentosa"><option value="1" name="option">1</option><option value="2" name="option">2</option><option value="3" name="option">3</option><option value="4" name="option">4</option> <option value="5" name="option">5</option><option value="6" name="option">6</option> <option value="7" name="option">7</option><option value="8" name="option">8</option><option value="9" name="option">9</option> <option value="10" name="option">10</option></select> <h3>Timing:</h4><select class="form-control" id="time' + partsOfStr[i] + '" name="time"><option value="Morning" name="option">Morning</option> <option value="Day" name="option">Day</option> <option value="Night" name="option">Night</option> </select>');
+
+                        var name = partsOfStr[i]
+                        console.log(name)
+
+
+                      
+
+                    }
+
+
+                }
+            }
+        });
+
+
+      
+
+
+
+
+
+
+    </script>
+</head>
+<body>
+   
+    <script>
+        $(document).ready(function () {
+            $("#submit").click(function () {
+                
+                var tourid = localStorage.getItem("tourid");
+                $.ajax({
+                    url: 'http://mp02.mybitmp.org/friendzone/gettourfile.php?tourid=' + tourid,
+                    dataType: 'json',
+                    success: function (done) {
+                        console.log(done);
+
+                        var done3 = done;
+
+
+                        for (var j = 0, length = done3.length; j < length; j++) {
+                            var data = done3[j];
+                            var place = done3[j].nameoftheplace;
+                            var y = data.coordinates;
+                            localStorage.setItem("place", place);
+                            console.log(place)
+                            // y.push(data.coordinates);
+                            var partsOfStr = place.split(',');
+                            console.log(partsOfStr)
+                            var full = [];
+                            for (i = 0; i < partsOfStr.length; i++) {
+                               
+                                
+                                
+                                //$.ajax({
+                                //    url: 'http://mp02.mybitmp.org/friendzone/getsurvey.php?Name=' + partsOfStr[i],
+                                //    dataType: 'json',
+                                //    success: function (done) {
+                                //        console.log(done);
+                                //        var rating = done[0].rating
+                                //        var Name = done[0].Name
+                                //        console.log(done);
+                                //        var add = document.getElementById(Name).value;
+                                        
+                                //        var newrating = parseFloat(rating) + parseFloat(add)
+                                //        console.log(add)
+                                //        console.log(newrating)
+                                //        console.log(add)
+                                //        localStorage.setItem("newrating", newrating);
+                                //        localStorage.setItem("Name", Name);
+
+
+                                var rating = document.getElementById(partsOfStr[i]).value;
+                                var time = document.getElementById('time' + partsOfStr[i]).value;
+                                console.log(rating)
+                                console.log(time)
+
+                                        var newrating = localStorage.getItem("newrating");
+                                        var Name = localStorage.getItem("Name");
+                                        $.ajax({
+                                            url: 'http://mp02.mybitmp.org/friendzone/insertnewsurvey.php?category=adventure&place=' + partsOfStr[i]+'&rating='+rating+'&time='+time,
+                                            dataType: 'json',
+                                            success: function (done) { 
+                                                if (done[0].result !== "1") {
+
+                                                    alert("Thank You!")
+
+                                                }
+                                            }
+                                        });
+
+
+                                //    }
+                                //});
+
+                                function onError(error) {
+                                    alert('code: ' + error.code + '\n' + 'message: ' + error.message + '\n');
+                                }
+
+
+                            }
+                        }
+                    }
+                });
+            });
+        });
+    </script>
+  
+
+        <p>Click on this paragraph.</p>
+
+
+        <div class="container">
+            <div class="col-md-4 col-md-offset-4 mainForm">
+                <h1>Survey</h1>
+                <div id="form">
+                    <!-- question 1 using select and options -->
+                    <h3>Type of person:</h3><select class="form-control" id="interest" name="interest"><option value="adventurous" name="option">adventurous</option> <option value="food lover" name="option">food lover</option> <option value="shopping " name="option">shopping lover</option> </select>
+                   
+                    <!--<div class="radio">
+                        <label><input type="radio" value="dog" name="radio">dog</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" value="cat" name="radio">cat</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" value="bird" name="radio">bird</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" value="snake" name="radio">snake</label>
+                    </div>
+                    <br>
+                    <br>-->
+                    <button class="ui-btn ui-shadow" id="submit">submit</button>
+                </div>
+
+            </div>
+        </div>
+
+        <script src="scripts/index.js"></script>
+
+
+    </body>
+</html>
+

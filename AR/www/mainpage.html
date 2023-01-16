@@ -1,0 +1,500 @@
+﻿
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Security-Policy" content="default-src *; style-src * 'unsafe-inline'; script-src * 'unsafe-inline' 'unsafe-eval'; media-src *; img-src * filesystem: data:">
+    <meta http-equiv="Content-Security-Policy" content="img-src 'self' data:">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="lib/jquery/jquery-3.2.1.min.js"></script>
+    
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="css/index.css">
+
+   <style>
+        .silder {
+            width: 1200px;
+        }
+
+
+        #slideshow {
+            position: relative;
+            width: 240px;
+            height: 240px;
+            padding: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .sildertext {
+            position: absolute;
+            top: 200px;
+            color: #fff;
+            z-index: 2;
+           vertical-align:top;
+           text-align:center;
+        } 
+
+            #slideshow > div {
+                position: absolute;
+                top: 10px;
+                left: 10px;
+                right: 10px;
+                bottom: 10px;
+            }
+
+        .sidenav {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            top: 0;
+            left: 0;
+            background-color: #111;
+            overflow-x: hidden;
+            transition: 0.5s;
+            padding-top: 60px;
+        }
+
+            .sidenav a {
+                padding: 8px 8px 8px 32px;
+                text-decoration: none;
+                font-size: 25px;
+                color: #818181;
+                display: block;
+                transition: 0.3s;
+              
+                
+            }
+
+                .sidenav a:hover {
+                    color: #f1f1f1;
+                }
+
+            .sidenav .closebtn {
+                position: absolute;
+                top: 0;
+                right: 25px;
+                font-size: 36px;
+                margin-left: 50px;
+            }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+                .sidenav a {
+                    font-size: 18px;
+                }
+        }
+
+        table {
+            border-collapse: collapse;
+        }
+        .mySlides {
+            display: none
+        }
+
+        .w3-left, .w3-right, .w3-badge {
+            cursor: pointer
+        }
+
+        .w3-badge {
+            height: 13px;
+            width: 13px;
+            padding: 0
+        }
+
+        .my-container1 {
+            margin-top: 10px;
+            position: relative;
+            background: black;
+            overflow: hidden;
+            width:100%;
+            height:200px;
+        }
+
+            .my-container1:before {
+                content: ' ';
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 200px;
+                z-index: 1;
+                opacity: 0.5;
+                background-image: url('images/map1.jpg');
+                background-repeat: no-repeat;
+                background-position: 50% 0;
+                -ms-background-size: cover;
+                -o-background-size: cover;
+                -moz-background-size: cover;
+                -webkit-background-size: cover;
+                background-size: cover;
+            }
+
+
+        .my-container2 {
+            margin-top:5px;
+            position: relative;
+            background: black;
+            overflow: hidden;
+            width: 100%;
+            height: 200px;
+        }
+
+            .my-container2:before {
+                content: ' ';
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 200px;
+                z-index: 1;
+                opacity: 0.5;
+                background-image: url('images/imagereco.jpg');
+                background-repeat: no-repeat;
+                background-position: 50% 0;
+                -ms-background-size: cover;
+                -o-background-size: cover;
+                -moz-background-size: cover;
+                -webkit-background-size: cover;
+                background-size: cover;
+            }
+
+       .my-container3 {
+           margin-top: 5px;
+           position: relative;
+           background: black;
+           overflow: hidden;
+           width: 100%;
+           height: 200px;
+       }
+
+            .my-container3:before {
+                content: ' ';
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 200px;
+                z-index: 1;
+                opacity: 0.5;
+                background-image: url('images/category1.jpg');
+                background-repeat: no-repeat;
+                background-position: 50% 0;
+                -ms-background-size: cover;
+                -o-background-size: cover;
+                -moz-background-size: cover;
+                -webkit-background-size: cover;
+                background-size: cover;
+            }
+
+       .my-container4 {
+           margin-top: 5px;
+           position: relative;
+           background: black;
+           overflow: hidden;
+           width: 100%;
+           height: 200px;
+       }
+
+            .my-container4:before {
+                content: ' ';
+                display: block;
+                position: absolute;
+                left: 0;
+                top: 0;
+                width: 100%;
+                height: 200px;
+                z-index: 1;
+                opacity: 0.5;
+                background-image: url('images/translate.jpg');
+                background-repeat: no-repeat;
+                background-position: 50% 0;
+                -ms-background-size: cover;
+                -o-background-size: cover;
+                -moz-background-size: cover;
+                -webkit-background-size: cover;
+                background-size: cover;
+            }
+
+       .my-container5 {
+           margin-top: 5px;
+           position: relative;
+           background: black;
+           overflow: hidden;
+           width: 100%;
+           height: 200px;
+       }
+
+           .my-container5:before {
+               content: ' ';
+               display: block;
+               position: absolute;
+               left: 0;
+               top: 0;
+               width: 100%;
+               height: 200px;
+               z-index: 1;
+               opacity: 0.5;
+               background-image: url('images/images.jpg');
+               background-repeat: no-repeat;
+               background-position: 50% 0;
+               -ms-background-size: cover;
+               -o-background-size: cover;
+               -moz-background-size: cover;
+               -webkit-background-size: cover;
+               background-size: cover;
+           }
+
+
+            .my-container1 h1 {
+                
+                text-align: center;
+                z-index: 2;
+                position: relative;
+                color: #fff;
+            }
+
+        .my-container2 h1 {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            color: #fff;
+        }
+
+        .my-container3 h1 {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            color: #fff;
+        }
+
+        .my-container4 h1 {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            color: #fff;
+        }
+
+       .my-container5 h1 {
+           text-align: center;
+           z-index: 2;
+           position: relative;
+           color: #fff;
+       } 
+
+            #container1{float:right;}
+        #container2 {
+            float: left;
+        }
+            .container{width:100%;
+                       height:100%;
+                       margin-top:20px;
+            }
+
+
+       
+            
+          .mainname{margin-left:auto;
+                    margin-right:auto;
+                       
+          }  
+            
+            .mainname h1 {
+                width:290px;
+                height:80px;
+           color: #fff;
+           border: 3px solid #fff ;
+           text-align: center ;
+           background: rgba(0,0,0,0.1);
+           font-size: 22px ;
+           font-weight: normal ;
+           padding: 20px;
+           margin: 10px ;
+           display: inline-block
+       }
+
+
+           
+
+    </style>
+    
+</head>
+<body>
+    <header class="w3-container w3-indigo">
+        <center><h2>E'spore</h2></center>
+    </header>
+    
+  <!--<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="login.html">About</a>
+    <a href="agency.html">Agency</a>
+    <a href="profile.html">My Account</a>
+</div>
+<span style="font-size:30px;cursor:pointer;float:left" onclick="openNav()">&#9776;</span>-->
+    
+   
+    <div class=" wholepage">
+      
+
+      
+        <div class="w3-content w3-display-container" style="max-width:800px">
+
+            <div id="0">
+                <img class="mySlides" src="images/event1.jpg" style="width:100%">
+
+            </div>
+            <div id="1">
+                <img class="mySlides" src="images/event2.jpg" style="width:100%">
+                <div class="sildertext"><p></p></div>
+            </div>
+            <div id="2">
+                <img class="mySlides" src="images/event3.jpg" style="width:100%">
+                <div class="sildertext"></div>
+            </div>
+            <div id="3">
+                <img class="mySlides" src="images/event4.jpg" style="width:100%">
+                <div class="sildertext"></div>
+            </div>
+            <div id="4">
+                <img class="mySlides" src="images/event5.jpg" style="width:100%">
+                <div class="sildertext"></div>
+            </div>
+
+            <div class="w3-center w3-container w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+                <div class="w3-left w3-hover-text-khaki" onclick="plusDivs(-1)">&#10094;</div>
+                <div class="w3-right w3-hover-text-khaki" onclick="plusDivs(1)">&#10095;</div>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+                <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(5)"></span>
+            </div>
+        </div>
+        <div class="container">
+
+            
+                    <div onclick="container1();" id="content1" class="my-container1 mainname">
+                        <h1>Map</h1>
+                    </div>
+                
+                    <div onclick="container2();" id="content2" class="my-container2 mainname">
+                        <h1>Image Recognition</h1>
+                    </div>
+               
+                    <div onclick="container3();" id="content3" class="my-container3 mainname">
+                        <h1>Categories</h1>
+                    </div>
+               
+                    <div onclick="container4();" id="content4" class="my-container4 mainname">
+                        <h1>Translation</h1>
+                    </div>
+
+            <div onclick="container5();"  id="content5" class="my-container5 mainname" >
+                <h1>Augmented Reality</h1>
+            </div>
+           
+        </div>
+        <!--Add the following script at the bottom of the web page (before </body></html>)-->
+        <script type="text/javascript" async="async" defer="defer" data-cfasync="false" src="https://mylivechat.com/chatinline.aspx?hccid=50818496"></script>
+    </div>
+   
+    
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+    <script type="text/javascript" src="scripts/mainpage.js"></script>
+   
+
+
+
+
+
+</body>
+</html>
+    
+
+
+
+
+<!--<!DOCTYPE html>
+<html>
+<head>
+
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" type="text/css" href="css/TourRouteMap.css">
+    <link rel="stylesheet" href="css/jquery/jquery.mobile-1.4.5.css">
+    <link rel="stylesheet" href="css/TourRouteMap.css">
+    <script src="lib/jquery/jquery-3.2.1.min.js"></script>
+    <title>Tour Guided Map</title>
+
+
+</head>
+<body>
+    <p id="geolocation">Watching geolocation...</p>
+    <p>Click the button to trigger a function that will output "Hello World" in a p element with id="demo".</p>
+
+    <button onclick="getLocation()">Try It</button>
+
+    <p id="demo"></p>
+
+    <script>
+        var x = document.getElementById("demo");
+
+        function getLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(showPosition);
+                alert('nice');
+                alert(position.coords.latitude);
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            x.innerHTML = "Latitude: " + position.coords.latitude +
+                "<br>Longitude: " + position.coords.longitude;
+            alert(position.coords.latitude);
+        }
+    </script>
+    <button id="myButton">gotolousypage</button>
+    <script type="text/javascript">
+         document.getElementById("myButton").onclick = function () {
+             location.href = "TourRouteMap.html";
+         };
+    </script>
+
+    <button onclick="getLocation()">Try It</button>
+    <div class="logo"></div>
+    <div id="agencytime"></div>
+
+    <div id="map"></div>
+    <input type="submit" id="submit">
+    <div class="btn SeeAgencyPlace">Find Tour Guide Location</div>
+    <div class="btn SeeAgencyPlace">Find Tour Guide Location</div>
+    <div class="TourTextBox">This div is only here to enable scrolling (height = 800 pixels).</div>
+
+
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="scripts/platformOverrides.js"></script>
+    <script type="text/javascript" src="scripts/index.js"></script>
+    <script type="text/javascript" src="scripts/AgencyTourMapTest.js"></script>
+
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2NnFweoG_OkkqtHARN1Uceq4dvYQ6LMo&callback=initMap">
+    </script>
+</body>
+
+
+</html>-->

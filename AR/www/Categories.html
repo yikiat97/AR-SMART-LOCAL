@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="css/Content/jquery.mobile-1.4.5.min.css">
+    <link rel="stylesheet" href="css/index1.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <script src="lib/jquery/jquery-3.2.1.min.js"></script>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+    <title>categorypage</title>
+</head>
+<body>
+    <header class="w3-container w3-indigo">
+        <center><h2>E'spore</h2></center>
+    </header>
+    <div>
+        <div class="body">
+
+            <select id="type" class="dropdown" onchange="filterMarkers(this.value);">
+                <option value="TouristAttraction">Tourist Attractions</option>
+                <option value="Monuments">Monuments</option>
+                <option value="Museum">Museums</option>
+                <option value="HawerCenter">Hawker Center</option>
+                <option value="HealthFood">Fast Food</option>
+
+
+            </select>
+            <div id="map">
+
+            </div>
+            <div class="floating-panel">
+
+                <h4>Mode of Travel:</h4>
+                <select id="mode" class="mode">
+                    <option value="DRIVING">Driving</option>
+                    <option value="WALKING">Walking</option>
+                    <option value="BICYCLING">Cycling</option>
+                    <option value="TRANSIT">Transit</option>
+                </select>
+
+
+
+
+                <input type="button" id="direction" value="Direction">
+
+
+                <div id="directions-panel"></div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript" src="scripts/category.js"></script>
+    <script async defer
+            src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB2NnFweoG_OkkqtHARN1Uceq4dvYQ6LMo&callback=initMap">
+    </script>
+
+</body>
+</html>
